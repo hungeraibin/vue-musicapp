@@ -63,7 +63,7 @@ export default {
   transition: all 0.3s;
 }
 
-.slider-enter, .slider-leave {
+.slider-enter, .slider-leave-to {
   transform: translate3d(100%, 0, 0);
 }
 </style>
