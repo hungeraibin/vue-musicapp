@@ -17,7 +17,7 @@ const transform = prefixStyle('transform')
 
 export default {
   props: {
-    precent: {
+    percent: {
       type: Number,
       default: 0
     }
@@ -51,17 +51,17 @@ export default {
       const barWidth = this.$refs.progressBar.clientWidth - progressBtnWidth
       const percent = this.$refs.progress.clientWidth / barWidth
       this.$emit('percentChange', percent)
-    },
+    },    
     _offset(offsetWidth) {
       this.$refs.progress.style.width = `${offsetWidth}px`
       this.$refs.progressBtn.style[transform] = `translate3d(${offsetWidth}px, 0, 0)`
     }
   },
   watch: {
-    precent(newPrecent) {
-      if (newPrecent >= 0 && !this.touch.initiated) {
+    percent(newPercent) {
+      if (newPercent >= 0 && !this.touch.initiated) {
         const barWidth = this.$refs.progressBar.clientWidth - progressBtnWidth
-        const offsetWidth = newPrecent * barWidth
+        const offsetWidth = newPercent * barWidth
         this._offset(offsetWidth)
       }
     }
