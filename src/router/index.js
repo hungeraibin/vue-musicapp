@@ -44,11 +44,17 @@ export default new Router({
           path: ':id',
           component: TopList
         }
-      ]
+      ] 
     },
     {
       path: '/search',
-      component: Search
+      component: Search,
+      children: [
+        {
+          path: ':id',
+          component: SingerDetail
+        }
+      ]
     }
   ]
 })
