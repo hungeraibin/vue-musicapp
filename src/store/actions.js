@@ -39,7 +39,7 @@ export const insertSong = function ({commit,state}, song) {
   let currentIndex = state.currentIndex
   let currentSong = playlist[currentIndex]
   let fpIndex = findIndex(playlist, song) 
-  currentIndex++
+  currentIndex++  
   playlist.splice(currentIndex, 0, song)
   if (fpIndex > -1) {
     if (currentIndex > fpIndex) {
