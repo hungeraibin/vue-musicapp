@@ -57,12 +57,13 @@ export function clearSearch() {
 export function savePlay(song) {
   let songs = storage.get(PLAY_KEY, [])
   insertArray(songs, song, (item) => {
-    return item.id === song.id
-  }, PLAY_MAX_LENGTH)
+    return song.id === item.id
+  }, PLAY_MAX_LEN)
   storage.set(PLAY_KEY, songs)
   return songs
 }
-
+  
 export function loadPlay() {
   return storage.get(PLAY_KEY, [])
 }
+
